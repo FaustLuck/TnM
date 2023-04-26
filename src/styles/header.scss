@@ -4,4 +4,95 @@ header {
   height: 104px;
   width: 100%;
   display: flex;
+  align-items: center;
+}
+
+.header_inner {
+  height: 20px;
+  display: flex;
+  margin: 40px;
+  width: 100%;
+}
+
+.flag {
+  height: inherit;
+  flex-grow: .5;
+
+  &_img {
+    height: 100%;
+  }
+}
+
+.nav {
+  flex-grow: 2;
+
+  &.page_1 > *, &.page_2 > *, &.page_4 > * {
+    color: $white;
+  }
+
+  &.page_3 > * {
+    color: $darkBlue;
+  }
+
+  &_item {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 21px;
+    font-stretch: 151%;
+    opacity: .5;
+    cursor: pointer;
+
+    &-active {
+      position: relative;
+      opacity: 1;
+
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: -8px;
+        left: 0;
+        height: 1px;
+        width: 72px;
+        background-color: $azure;
+      }
+    }
+  }
+}
+
+.contacts {
+  flex-grow: .75;
+  font-size: 20px;
+
+  &.page_1 > *, &.page_2 > *, &.page_4 > * {
+    color: $white;
+  }
+
+  &.page_3 > * {
+    color: $azure;
+  }
+
+  &_item {
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    font-stretch: 126%;
+  }
+}
+
+.lang {
+  &_item {
+    font-size: 12px;
+    line-height: 18px;
+    font-stretch: 136%;
+    padding: 0 15px;
+    color: $white;
+    background-color: $darkBlue;
+    cursor: pointer;
+
+    &-active {
+      background-color: $azure;
+    }
+  }
 }
