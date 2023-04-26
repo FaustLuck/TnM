@@ -1,0 +1,44 @@
+footer {
+  @include pages('.quote', color, $white, $white, $darkBlue, $white);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.quote {
+  position: absolute;
+  left: 40px;
+  bottom: 25px;
+  font-weight: 200;
+  font-size: 16px;
+  font-stretch: 136%;
+}
+
+.counter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 10px;
+  height: 10px;
+
+  &_number {
+    opacity: .5;
+
+    &-active {
+      opacity: 1;
+    }
+  }
+}
+
+.made {
+  position: absolute;
+  height: 40px;
+  right: 40px;
+  bottom: 45px;
+
+  &_img {
+    height: 100%;
+  }
+}
