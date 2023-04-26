@@ -1,0 +1,13 @@
+.wrapper {
+  &_main {
+    height: 100%;
+
+    background-image: url("../assets/Bg.png");
+    background-color: rgba($darkBlue, .9);
+    background-blend-mode: multiply;
+    background-size: cover;
+  }
+
+}
+
+
