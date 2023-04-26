@@ -1,7 +1,7 @@
 {
   "name": "TnM",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "author": "faustluck <faustluck91@gmail.com>",
   "license": "MIT",
   "type": "module",
