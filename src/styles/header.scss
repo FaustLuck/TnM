@@ -26,7 +26,7 @@ header {
 .nav {
   flex-grow: 2;
 
-  @include pages('*', $white, $white, $darkBlue, $white);
+  @include pages('*', color, $white, $white, $darkBlue, $white);
 
   &_item {
     text-transform: uppercase;
@@ -58,7 +58,7 @@ header {
   flex-grow: .75;
   font-size: 20px;
 
-  @include pages('*', $white, $white, $azure, $white);
+  @include pages('*', color, $white, $white, $azure, $white);
 
   &_item {
     font-style: normal;
