@@ -26,7 +26,6 @@ header {
 .nav {
   flex-grow: 2;
 
-  @include pages('*', color, $white, $white, $darkBlue, $white);
 
   &_item {
     text-transform: uppercase;
@@ -36,6 +35,8 @@ header {
     font-stretch: 151%;
     opacity: .5;
     cursor: pointer;
+    @include pages(color, false, $white, $white, $darkBlue, $white);
+
 
     &-active {
       position: relative;
@@ -58,7 +59,6 @@ header {
   flex-grow: .75;
   font-size: 20px;
 
-  @include pages('*', color, $white, $white, $azure, $white);
 
   &_item {
     font-style: normal;
@@ -66,6 +66,8 @@ header {
     font-weight: 600;
     font-size: 20px;
     font-stretch: 126%;
+    @include pages(color, false, $white, $white, $azure, $white);
+
   }
 }
 
