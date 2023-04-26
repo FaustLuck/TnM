@@ -26,13 +26,7 @@ header {
 .nav {
   flex-grow: 2;
 
-  &.page_1 > *, &.page_2 > *, &.page_4 > * {
-    color: $white;
-  }
-
-  &.page_3 > * {
-    color: $darkBlue;
-  }
+  @include pages('*', $white, $white, $darkBlue, $white);
 
   &_item {
     text-transform: uppercase;
@@ -64,13 +58,7 @@ header {
   flex-grow: .75;
   font-size: 20px;
 
-  &.page_1 > *, &.page_2 > *, &.page_4 > * {
-    color: $white;
-  }
-
-  &.page_3 > * {
-    color: $azure;
-  }
+  @include pages('*', $white, $white, $azure, $white);
 
   &_item {
     font-style: normal;
