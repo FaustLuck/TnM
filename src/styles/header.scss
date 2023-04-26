@@ -39,18 +39,9 @@ header {
 
 
     &-active {
-      position: relative;
       opacity: 1;
 
-      &::after {
-        position: absolute;
-        content: '';
-        bottom: -8px;
-        left: 0;
-        height: 1px;
-        width: 72px;
-        background-color: $azure;
-      }
+      @include underline($azure, -8px, 1px, 72px);
     }
   }
 }

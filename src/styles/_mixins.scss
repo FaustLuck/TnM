@@ -11,3 +11,20 @@
     }
   }
 }
+
+@mixin underline($color, $bottom, $h, $w) {
+  &{
+    position: relative;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: $bottom;
+    left: 0;
+    height: $h;
+    width: $w;
+    background-color: $color;
+    transform: skewX(-30deg);
+  }
+}
