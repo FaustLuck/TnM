@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;500;600&display=swap');
+@import "vars";
+@import "header";
+
+
+:root {
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+
+
+main {
+  height: 100vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
