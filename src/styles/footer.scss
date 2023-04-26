@@ -1,5 +1,5 @@
 footer {
-  @include pages('.quote', color, $white, $white, $darkBlue, $white);
+
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -12,22 +12,48 @@ footer {
   font-weight: 200;
   font-size: 16px;
   font-stretch: 136%;
+  @include pages(color, false, $white, $white, $darkBlue, $white);
 }
 
 .counter {
   position: fixed;
+  height: 47px;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 10px;
-  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
 
   &_number {
+    display: inline-block;
+    position: relative;
     opacity: .5;
+    height: 51px;
+    margin: 0 40px;
+
+    @include pages(color, false, $azure, $darkBlue, $darkBlue, $azure);
+    @include pages(color, true, $white, $darkBlue, $white, $white);
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 1px;
+      height: 32px;
+    }
 
     &-active {
       opacity: 1;
+
+      &::after {
+        width: 2px;
+      }
     }
   }
 }
