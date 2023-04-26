@@ -1,6 +1,19 @@
+main{
+  overflow: hidden;
+
+}
+
 .wrapper {
+  display: flex;
+  transition: transform 1s linear;
+
+  &>*{
+
+    height: 100vh;
+    min-width: 100vw;
+  }
+
   &_main {
-    height: 100%;
 
     background-image: url("../assets/Bg.png");
     background-color: rgba($darkBlue, .9);
@@ -9,5 +22,3 @@
   }
 
 }
-
-
