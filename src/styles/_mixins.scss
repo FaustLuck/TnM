@@ -1,22 +1,22 @@
-@mixin pages($string,$c1,$c2,$c3,$c4) {
+@mixin pages($string,$property,$c1,$c2,$c3,$c4) {
 
   $selector: unquote($string);
 
   @debug $selector;
 
   &.page_1 > #{$selector} {
-    color: $c1;
+    #{$property}: $c1;
   }
   &.page_2 > #{$selector} {
-    color: $c2;
+    #{$property}: $c2;
   }
 
   &.page_3 > #{$selector} {
-    color: $c3;
+    #{$property}: $c3;
   }
 
   &.page_4 > #{$selector} {
-    color: $c4;
+    #{$property}: $c4;
   }
 
 
