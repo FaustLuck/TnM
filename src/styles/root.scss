@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;500;600&display=swap');
 @import "vars";
 @import "header";
+@import "main";
 
-
-:root {
-  font-family: 'Roboto Flex', sans-serif;
+@font-face {
+  font-family: 'Roboto Flex';
+  src: url('../assets/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
+:root {
+  font-family: 'Roboto Flex';
+}
 
 
 main {
