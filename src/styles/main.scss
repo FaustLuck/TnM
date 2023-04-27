@@ -64,6 +64,7 @@ main {
     font-stretch: 126%;
     line-height: 42px;
     color: $white;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
 
     @include underline(after, $azure, -14px, 4px, 131px);
   }
