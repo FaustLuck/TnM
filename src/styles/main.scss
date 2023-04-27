@@ -166,7 +166,20 @@ main {
         font-stretch: 136%;
       }
     }
+  }
+}
 
+.engineering {
+  width: 100%;
 
+  &_title {
+    font-weight: 625;
+    font-size: 160px;
+    line-height: 188px;
+    margin-left: 28px;
+    text-transform: uppercase;
+    color: $white;
+    font-stretch: 126%;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
   }
 }
