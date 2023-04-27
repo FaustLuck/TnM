@@ -36,7 +36,7 @@ footer {
     font-stretch: 151%;
 
     @include pages(color, false, $azure, $darkBlue, $darkBlue, $azure);
-    @include pages(color, true, $white, $darkBlue, $white, $white);
+    @include pages(color, true, $white, $darkBlue, $darkBlue, $white);
 
     &::after {
       position: absolute;
@@ -64,6 +64,7 @@ footer {
   height: 40px;
   right: 40px;
   bottom: 45px;
+  @include pages(opacity, false, 1, 0, 0, 1);
 
   &_img {
     height: 100%;
