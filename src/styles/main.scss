@@ -12,20 +12,19 @@ main {
     justify-content: center;
     height: 100vh;
     min-width: 100vw;
+    position: relative;
   }
 
   &_main {
-    background-image: url("../assets/main/Background.jpg");
+    background-image: url("../assets/main/background.jpg");
     background-color: rgba($darkBlue, .9);
     background-blend-mode: multiply;
     background-size: cover;
-    position: relative;
   }
 
   &_engineering {
-    background-image: url("../assets/engineering/Background.jpg");
+    background-image: url("../assets/engineering/background.jpg");
     background-size: cover;
-    position: relative;
   }
 }
 
@@ -95,7 +94,7 @@ main {
 
     &::before {
       position: absolute;
-      content: url("../assets/common/Arrow.svg");
+      content: url("../assets/common/arrow.svg");
       height: 100%;
       width: 20px;
       left: -28px;
