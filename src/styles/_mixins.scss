@@ -2,7 +2,8 @@
   @for $i from 1 to 5 {
     @if $pseudo==false {
       &.page_#{$i} {
-        #{$property}: nth($colors, $i)
+        #{$property}: nth($colors, $i);
+        transition: $property 1s linear;
       }
     } @else {
       &.page_#{$i}::after {
@@ -13,7 +14,7 @@
 }
 
 @mixin underline($el,$color, $bottom, $h, $w) {
-  &{
+  & {
     position: relative;
   }
 
