@@ -8,6 +8,7 @@
     } @else {
       &.page_#{$i}::after {
         background-color: nth($colors, $i);
+        transition: background-color 1s linear;
       }
     }
   }
