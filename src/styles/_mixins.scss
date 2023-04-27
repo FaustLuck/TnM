@@ -12,12 +12,12 @@
   }
 }
 
-@mixin underline($color, $bottom, $h, $w) {
+@mixin underline($el,$color, $bottom, $h, $w) {
   &{
     position: relative;
   }
 
-  &::after {
+  &::#{$el} {
     position: absolute;
     content: '';
     bottom: $bottom;
