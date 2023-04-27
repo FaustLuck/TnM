@@ -183,4 +183,44 @@ main {
     font-stretch: 126%;
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
   }
+
+  &_content {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  &_frame {
+    width: 100%;
+    background: linear-gradient(90deg, transparent 16%, rgba($azure, .9) 16%, rgba($azure, .9));
+    padding: 80px 0;
+  }
+
+  &_plan {
+    width: 860px;
+    height: 420px;
+    position: absolute;
+    right: 40px;
+    bottom: 55px;
+  }
+}
+
+.content {
+  &_title {
+    font-weight: 625;
+    font-size: 32px;
+    line-height: 38px;
+    margin: 40px 0;
+    color: $darkBlue;
+    font-stretch: 126%;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
+  }
+
+  &_text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 13px;
+    color: $white;
+    font-stretch: 136%;
+  }
 }
