@@ -1,24 +1,166 @@
-main{
+main {
   overflow: hidden;
-
 }
 
 .wrapper {
   display: flex;
   transition: transform 1s linear;
 
-  &>*{
-
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     min-width: 100vw;
   }
 
   &_main {
-
     background-image: url("../assets/Bg.png");
     background-color: rgba($darkBlue, .9);
     background-blend-mode: multiply;
     background-size: cover;
+    position: relative;
+  }
+}
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+
+  &_centrifuge {
+    position: absolute;
+    width: 720px;
+    height: 550px;
+    left: -50px;
+    bottom: -100px
   }
 
+  &_timax {
+    position: absolute;
+    width: 550px;
+    height: 700px;
+    right: 60px;
+    top: -120px;
+  }
+
+  &_img {
+    height: 144px;
+    width: auto;
+  }
+
+  &_content {
+    margin-left: 208px;
+  }
+
+  &_title {
+    font-weight: 600;
+    font-size: 36px;
+    font-stretch: 126%;
+    line-height: 42px;
+    color: $white;
+
+    @include underline(after, $azure, -14px, 4px, 131px);
+  }
+
+  &_cards {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  margin-top: 52px;
+  width: 30%;
+
+  &_img {
+    height: 72px;
+    width: 72px;
+    margin-bottom: 10px;
+  }
+
+  &_title {
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-stretch: 136%;
+    margin: 10px 0;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: url("../assets/Arrow.svg");
+      height: 100%;
+      width: 20px;
+      left: -28px;
+    }
+  }
+
+  &_text {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    font-stretch: 136%;
+  }
+}
+
+.director {
+  margin-top: 60px;
+  float: right;
+  width: 66%;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 132px;
+    height: 2px;
+    top: -10px;
+    background-color: $azure;
+    transform: skewX(-30deg);
+  }
+
+  &_quote {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: $azure;
+    font-stretch: 136%;
+  }
+
+  &_author {
+    margin: 16px;
+    width: 250px;
+    float: right;
+    display: flex;
+    align-items: center;
+
+    & > img {
+      float: left;
+      height: 100%;
+      width: auto;
+      margin-right: 16px;
+    }
+
+    & > div {
+      & > * {
+        color: $white;
+      }
+
+      & > h3 {
+        font-weight: 500;
+        font-size: 20px;
+        font-stretch: 136%;
+      }
+
+      & > span {
+        font-weight: 200;
+        font-size: 16px;
+        opacity: .75;
+        font-stretch: 136%;
+      }
+    }
+
+
+  }
 }
