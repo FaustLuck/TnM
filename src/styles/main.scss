@@ -15,7 +15,7 @@ main {
   }
 
   &_main {
-    background-image: url("../assets/main/Background.png");
+    background-image: url("../assets/main/Background.jpg");
     background-color: rgba($darkBlue, .9);
     background-blend-mode: multiply;
     background-size: cover;
@@ -23,7 +23,7 @@ main {
   }
 
   &_engineering {
-    background-image: url("../assets/engineering/Background.png");
+    background-image: url("../assets/engineering/Background.jpg");
     background-size: cover;
     position: relative;
   }
