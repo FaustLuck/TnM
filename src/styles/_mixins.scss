@@ -30,3 +30,14 @@
     transform: skewX(-30deg);
   }
 }
+
+@mixin prependIcon() {
+  & {
+    position: relative;
+  }
+  &::before {
+    position: absolute;
+    width: 20px;
+    left: -28px;
+  }
+}

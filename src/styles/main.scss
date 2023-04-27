@@ -94,14 +94,12 @@ main {
     color: #FFFFFF;
     font-stretch: 136%;
     margin: 10px 0;
-    position: relative;
+
+    @include prependIcon();
 
     &::before {
-      position: absolute;
       content: url("../assets/common/arrow.svg");
-      height: 100%;
-      width: 20px;
-      left: -28px;
+      top: 3px;
     }
   }
 
@@ -216,6 +214,8 @@ main {
     color: $darkBlue;
     font-stretch: 126%;
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
+
+    @include underline(before, $darkBlue, -8px, 2px, 131px);
   }
 
   &_text {
