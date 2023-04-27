@@ -384,3 +384,89 @@ main {
   }
 }
 
+.logo {
+
+  & > img {
+    margin-right: 150px;
+  }
+
+  &_year {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 144px;
+
+    & > span {
+      font-size: 144px;
+      font-stretch: 151%;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    & > img {
+      margin: 15px;
+      height: 65px;
+    }
+  }
+
+}
+
+.contacts {
+  display: flex;
+  width: 750px;
+  margin: 100px auto 200px;
+
+  & > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:first-of-type {
+      margin-right: 100px;
+    }
+  }
+
+  &_item {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: $white;
+    font-stretch: 136%;
+    text-decoration: none;
+
+    &-map{
+      @include prependIcon();
+      &::before{
+        content: url("../assets/contacts/map.svg");
+      }
+    }
+    &-mail{
+      @include prependIcon();
+      &::before{
+        content: url("../assets/contacts/mail.svg");
+      }
+    }
+    &-phone{
+      @include prependIcon();
+      &::before{
+        content: url("../assets/contacts/phone.svg");
+      }
+    }
+
+  }
+}
+
+.social {
+  height: 32px;
+  text-align: center;
+
+  &_item {
+    margin: 12px;
+  }
+
+  &_icon {
+    height: 100%;
+    width: auto;
+  }
+}
