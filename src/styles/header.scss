@@ -36,6 +36,7 @@ header {
     font-stretch: 151%;
     opacity: .5;
     cursor: pointer;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 78;
     @include pages(color, false, $white, $white, $darkBlue, $white);
 
 
@@ -58,6 +59,7 @@ header {
     font-weight: 600;
     font-size: 20px;
     font-stretch: 126%;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
     @include pages(color, false, $white, $white, $azure, $white);
 
   }
