@@ -41,7 +41,7 @@ header {
     &-active {
       opacity: 1;
 
-      @include underline($azure, -8px, 1px, 72px);
+      @include underline(after, $azure, -8px, 1px, 72px);
     }
   }
 }
