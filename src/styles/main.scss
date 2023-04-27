@@ -29,6 +29,7 @@ main {
 
   &_equipment {
     background: linear-gradient(90deg, $white 60%, $darkBlue 60%, $darkBlue);
+    overflow: hidden;
   }
 }
 
@@ -227,3 +228,152 @@ main {
     font-stretch: 136%;
   }
 }
+
+.equipment {
+
+  width: 100%;
+
+  &_title {
+    font-weight: 600;
+    font-size: 160px;
+    line-height: 188px;
+    margin-left: 28px;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+    color: $azure;
+    font-stretch: 126%;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
+  }
+
+  &_frame {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  &_text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    color: #00182C;
+    font-stretch: 136%;
+    margin-bottom: 10px;
+
+    @include prependIcon();
+
+    &:first-of-type {
+      &::before {
+        content: url("../assets/common/arrow.svg");
+        top: 4.5px;
+      }
+    }
+  }
+
+  &_subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    color: $darkBlue;
+    font-stretch: 136%;
+    margin-bottom: 30px;
+
+    @include prependIcon();
+
+    &::before {
+      content: url("../assets/equipment/PDF.svg");
+      height: 30px;
+      width: 30px;
+      left: -40px;
+    }
+
+  }
+
+  &_button {
+    background: $azure;
+    border-radius: 2px;
+    display: inline-block;
+    transform: skewX(20deg) translateX(10px);
+    cursor: pointer;
+    padding: 8px 30px;
+
+    & > a {
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+      display: block;
+      transform: skewX(-20deg);
+      color: $white;
+      font-stretch: 143%;
+      font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 55;
+    }
+  }
+
+  &_img {
+    position: absolute;
+    width: 1175px;
+    height: 1016px;
+    right: -300px;
+    bottom: -350px;
+  }
+}
+
+.slider {
+  &_image {
+    overflow: hidden;
+    height: 450px;
+    width: 650px;
+
+    &_wrapper {
+      display: flex;
+      height: inherit;
+      width: inherit;
+      transition: transform 1s linear;
+
+      & > img {
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.control {
+  position: absolute;
+  background-color: $purple;
+
+  &_wrapper {
+    display: flex;
+    padding: 20px 0;
+  }
+
+  &_item {
+    margin: 0 25px;
+    font-weight: 572;
+    font-size: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $white;
+    font-stretch: 151%;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738;
+  }
+}
+
+.lamps {
+  position: absolute;
+  left: 26px;
+  height: 6px;
+
+  &_item {
+    display: inline-block;
+    width: 36px;
+    background-color: $azure;
+    height: 100%;
+    transform: skewX(-20deg);
+    border-radius: 1px;
+
+    &-active {
+      background-color: $white;
+    }
+  }
+}
+
