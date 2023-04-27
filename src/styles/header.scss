@@ -7,6 +7,12 @@ header {
   align-items: center;
   padding: 40px;
   z-index: 1;
+  transition: background-color 1s linear;
+
+  &.page_2 {
+    background-color: rgba($darkBlue, .9);
+    mix-blend-mode: multiply;
+  }
 }
 
 .header_inner {
