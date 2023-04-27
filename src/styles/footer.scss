@@ -34,6 +34,7 @@ footer {
     height: 51px;
     margin: 0 40px;
     font-stretch: 151%;
+    font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 78;
 
     @include pages(color, false, $azure, $darkBlue, $darkBlue, $azure);
     @include pages(color, true, $white, $darkBlue, $darkBlue, $white);
