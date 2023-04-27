@@ -14,14 +14,14 @@
     <div class="flag">
       <img class="flag_img" src="./assets/flag.svg" alt="ru">
     </div>
-    <nav class="nav page_1">
-      <a class="nav_item nav_item-active">компания</a>
-      <a class="nav_item">инжиниринг</a>
-      <a class="nav_item">оборудование</a>
-      <a class="nav_item">контакты</a>
+    <nav class="nav">
+      <a class="nav_item page_1 nav_item-active">компания</a>
+      <a class="nav_item page_1">инжиниринг</a>
+      <a class="nav_item page_1">оборудование</a>
+      <a class="nav_item page_1">контакты</a>
     </nav>
-    <address class="contacts page_1">
-      <a class="contacts_item" href="tel:+7(383)2360000">+7 (383) 236 00 00</a>
+    <address class="contacts ">
+      <a class="contacts_item page_1" href="tel:+7(383)2360000">+7 (383) 236 00 00</a>
     </address>
     <div class="lang">
       <a class="lang_item lang_item-active">Ru</a><a class="lang_item">En</a>
@@ -30,21 +30,67 @@
 </header>
 <main>
   <div class="wrapper">
-  <section class="wrapper_main"></section>
-  <section class="wrapper_engineering"></section>
-  <section class="wrapper_equipment"></section>
-  <section class="wrapper_contacts"></section>
+    <section class="wrapper_main">
+      <div class="main">
+        <img class="main_img" src="./assets/Logo.png" alt="Логотип">
+        <div class="main_content">
+          <h2 class="main_title">Ваш успех - наша миссия</h2>
+          <section class="main_cards">
+            <div class="card">
+              <img class="card_img" src="./assets/Production.svg" alt="Производство">
+              <h3 class="card_title">Мы - производитель</h3>
+              <p class="card_text">высокотехнологичного
+                и качественного оборудования для горной, химической, пищевой промышленности и коммунального
+                хозяйства.</p>
+            </div>
+            <div class="card">
+              <img class="card_img" src="./assets/Engineering.svg" alt="Инжиниринг">
+              <h3 class="card_title">Инжиниринг</h3>
+              <p class="card_text">объектов под ключ, техническое перевооружение
+                и модернизация производятся нашими технологами на основании научных знаний, расчётов
+                и проектирования процессов.</p>
+            </div>
+            <div class="card">
+              <img class="card_img" src="./assets/Service.svg" alt="Сервис">
+              <h3 class="card_title">Сервисное обслуживание</h3>
+              <p class="card_text">оборудования осуществляется профессионалами нашей компании
+                с большим опытом работы в самых нестандартных ситуациях.</p>
+            </div>
+          </section>
+          <section class="director">
+            <p class="director_quote">
+              “Наша компания - глобальное, опытное и технологичное звено на рынке горно-шахтного оборудования для
+              обогатительных фабрик. У нас работают высококвалифицированные специалисты с многолетним опытом в сфере
+              переработки полезных ископаемых, а также мы гордимся сотрудничеством с международными институтами нашего
+              дела. Мы не стоим на месте, мы находимся в режиме постоянного развития, улучшения
+              и совершенствования. Наша цель - надежно и оперативно обеспечивать наших клиентов оборудованием для
+              успешного производства их продукции!”
+            </p>
+            <div class="director_author">
+              <img src="./assets/Director.png" alt="Директор">
+              <div>
+                <h3>Титов Виталий</h3>
+                <span>Директор</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="wrapper_engineering"></section>
+    <section class="wrapper_equipment"></section>
+    <section class="wrapper_contacts"></section>
   </div>
 </main>
-<footer class="page_1">
-  <span class="quote">
+<footer class="">
+  <span class="quote page_1">
     Технология и механика &copy; 2023
   </span>
   <div class="counter">
-    <div class="counter_number counter_number-active">1</div>
-    <div class="counter_number">2</div>
-    <div class="counter_number">3</div>
-    <div class="counter_number">4</div>
+    <span class="counter_number page_1 counter_number-active">01</span>
+    <span class="counter_number page_1">02</span>
+    <span class="counter_number page_1">03</span>
+    <span class="counter_number page_1">04</span>
   </div>
   <div class="made">
     <img class="made_img" src="./assets/made.svg" alt="Сделано в России">
