@@ -1,23 +1,22 @@
-import path from "node:path";
+import { resolve, join } from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-const __dirname = path.resolve();
+const __dirname = resolve();
 const mode = process.env.NODE_ENV;
 const isProd = mode === "production";
-
 export default {
-  entry: path.resolve(__dirname, "./index.js"),
+  entry: resolve(__dirname, "./index.js"),
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "docs"),
+    path: resolve(__dirname, "docs"),
     publicPath: isProd ? "./" : "",
     clean: true,
     assetModuleFilename: "assets/[hash][ext][query]"
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "src"),
+      directory: join(__dirname, "src"),
       watch: true,
     }
   },
