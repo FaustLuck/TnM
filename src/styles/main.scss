@@ -26,6 +26,10 @@ main {
     background-image: url("../assets/engineering/background.jpg");
     background-size: cover;
   }
+
+  &_equipment {
+    background: linear-gradient(90deg, $white 60%, $darkBlue 60%, $darkBlue);
+  }
 }
 
 .main {
