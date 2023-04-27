@@ -6,15 +6,34 @@ function changeSlider(e) {
   wrapper.addEventListener("transitionend", pause);
   document.removeEventListener("wheel", changeSlider);
   wrapper.style.transform = `translateX(${number - e.deltaY}%)`;
-  changePage(number, e.deltaY);
+  const [current, next] = calculateIndices(number, e.deltaY);
+  changePage(current, next);
+  changeActiveElement(current, next);
 }
 
-function changePage(number, delta) {
-  const i = 1 + number / (-100);
-  const elements = document.querySelectorAll(`.page_${i}`);
+function calculateIndices(number, delta) {
+  const current = 1 + number / (-100);
+  const next = current + delta / 100;
+  return [current, next];
+}
+
+function changePage(current, next) {
+  const elements = document.querySelectorAll(`.page_${current}`);
   elements.forEach(el => {
-    el.classList.remove(`page_${i}`);
-    el.classList.add(`page_${i + delta / 100}`);
+    el.classList.remove(`page_${current}`);
+    el.classList.add(`page_${next}`);
+  });
+}
+
+function changeActiveElement(current, next) {
+  const actives = Array
+    .from(document.querySelectorAll("[class*=active]"))
+    .filter(el => el.parentElement.children.length === 4);
+  actives.forEach(el => {
+    const activeClass = Array.from(el.classList).filter(el => el.includes("-active"))[0];
+    const node = el.parentElement.children;
+    node[current - 1].classList.remove(activeClass);
+    node[next - 1].classList.add(activeClass);
   });
 }
 
