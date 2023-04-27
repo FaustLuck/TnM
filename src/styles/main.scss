@@ -17,7 +17,7 @@ main {
 
   &_main {
     background-image: url("../assets/main/background.jpg");
-    background-color: rgba($darkBlue, .9);
+    background-color: $darkBlue;
     background-blend-mode: multiply;
     background-size: cover;
   }
@@ -30,6 +30,13 @@ main {
   &_equipment {
     background: linear-gradient(90deg, $white 60%, $darkBlue 60%, $darkBlue);
     overflow: hidden;
+  }
+
+  &_contacts {
+    background-image: url("../assets/contacts/background.jpg");
+    background-color: $darkBlue;
+    background-blend-mode: multiply;
+    background-size: cover;
   }
 }
 
