@@ -47,4 +47,21 @@ function getNumber(string) {
   return array[0] ?? 0;
 }
 
+function setControl() {
+  const width = document.documentElement.clientWidth;
+  const control = document.querySelector(".control");
+  control.style.left = width * .6 + "px";
+  const titles = document.querySelectorAll(".control_item");
+  let opacity = 1;
+  titles.forEach(el => {
+    el.style.opacity = opacity;
+    opacity -= .4;
+    if (opacity.toFixed(1) === "-0.2") opacity = .05;
+    if (opacity < 0) opacity = 0;
+  });
+
+}
+
 document.addEventListener("wheel", changeSlider);
+document.addEventListener("DOMContentLoaded", setControl);
+window.addEventListener("resize", setControl);
