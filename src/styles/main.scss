@@ -15,7 +15,7 @@ main {
   }
 
   &_main {
-    background-image: url("../assets/Bg_1.png");
+    background-image: url("../assets/main/Background.png");
     background-color: rgba($darkBlue, .9);
     background-blend-mode: multiply;
     background-size: cover;
@@ -23,7 +23,7 @@ main {
   }
 
   &_engineering {
-    background-image: url("../assets/Bg_2.png");
+    background-image: url("../assets/engineering/Background.png");
     background-size: cover;
     position: relative;
   }
@@ -94,7 +94,7 @@ main {
 
     &::before {
       position: absolute;
-      content: url("../assets/Arrow.svg");
+      content: url("../assets/common/Arrow.svg");
       height: 100%;
       width: 20px;
       left: -28px;
