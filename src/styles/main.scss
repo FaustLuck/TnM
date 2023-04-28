@@ -348,9 +348,14 @@ main {
   position: absolute;
   background-color: $purple;
 
+  &_overflow {
+    overflow: hidden;
+  }
+
   &_wrapper {
     display: flex;
     padding: 20px 0;
+    transition: transform 1s linear;
   }
 
   &_item {
@@ -435,21 +440,26 @@ main {
     font-stretch: 136%;
     text-decoration: none;
 
-    &-map{
+    &-map {
       @include prependIcon();
-      &::before{
+
+      &::before {
         content: url("../assets/contacts/map.svg");
       }
     }
-    &-mail{
+
+    &-mail {
       @include prependIcon();
-      &::before{
+
+      &::before {
         content: url("../assets/contacts/mail.svg");
       }
     }
-    &-phone{
+
+    &-phone {
       @include prependIcon();
-      &::before{
+
+      &::before {
         content: url("../assets/contacts/phone.svg");
       }
     }
