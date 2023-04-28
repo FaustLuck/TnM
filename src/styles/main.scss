@@ -1,5 +1,5 @@
 main {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .wrapper {
@@ -372,14 +372,16 @@ main {
 
 .lamps {
   position: absolute;
+  display: flex;
   left: 26px;
   height: 6px;
+  bottom: -16px;
 
   &_item {
-    display: inline-block;
     width: 36px;
     background-color: $azure;
     height: 100%;
+    margin: 0 1.5px;
     transform: skewX(-20deg);
     border-radius: 1px;
 
