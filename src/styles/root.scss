@@ -17,3 +17,7 @@
   font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 14;
   overflow: hidden;
 }
+
+.disable-transition {
+  transition: none !important;
+}
