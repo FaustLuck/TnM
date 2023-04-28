@@ -1,4 +1,5 @@
 const wrapper = document.querySelector(".wrapper");
+const controlContainer = document.querySelector(".control");
 
 function changeSlider(e) {
   const number = +getNumber(wrapper.style.transform);
@@ -49,8 +50,7 @@ function getNumber(string) {
 
 function setControl() {
   const width = document.documentElement.clientWidth;
-  const control = document.querySelector(".control");
-  control.style.left = width * .6 + "px";
+  controlContainer.style.left = width * .6 + "px";
   const titles = document.querySelectorAll(".control_item");
   let opacity = 1;
   titles.forEach(el => {
@@ -65,3 +65,4 @@ function setControl() {
 document.addEventListener("wheel", changeSlider);
 document.addEventListener("DOMContentLoaded", setControl);
 window.addEventListener("resize", setControl);
+controlContainer.addEventListener("pointerdown", changeSlide);
