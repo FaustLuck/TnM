@@ -562,94 +562,154 @@ main {
   }
 }
 
-.logo {
+.contacts {
+  display: flex;
+  flex-direction: column;
 
-  & > img {
-    margin-right: 150px;
+  @include breakpoint($sm) {
+    padding: 40px 20px 120px;
   }
 
-  &_year {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 144px;
+  @include breakpoint($sm) {
+    padding: 40px 10px 120px;
+  }
 
-    & > span {
-      font-size: 144px;
-      font-stretch: 151%;
-      color: #fff;
-      font-weight: 600;
+  & > * {
+    width: 750px;
+
+    @include breakpoint($sm) {
+      width: 600px;
+    }
+
+    @include breakpoint($xs) {
+      width: 100%;
+    }
+  }
+
+
+  &_logo {
+    width: 500px;
+    margin: 0 auto;
+
+    @include breakpoint($xs) {
+      width: 300px
     }
 
     & > img {
-      margin: 15px;
-      height: 65px;
+      width: 80%;
     }
+
+    &_year {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      & > span {
+        font-size: 65px;
+        font-stretch: 151%;
+        color: #fff;
+        font-weight: 600;
+        @include breakpoint($xs) {
+          font-size: 35px;
+        }
+      }
+
+      & > img {
+        margin: 15px;
+        height: 30px;
+        @include breakpoint($xs) {
+          height: 16px;
+        }
+      }
+    }
+
   }
 
-}
-
-.contacts {
-  display: flex;
-  width: 750px;
-  margin: 100px auto 200px;
-
-  & > div {
-    width: 50%;
+  &_info {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    margin: 100px 0 200px;
 
-    &:first-of-type {
-      margin-right: 100px;
+    @include breakpoint($sm) {
+      flex-direction: column;
+      margin: 44px 0 69px;
+      padding-left: 46px;
+    }
+
+    & > div {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 40px;
+
+      @include breakpoint($sm) {
+        width: 100%;
+      }
+
+      &:last-of-type {
+        width: fit-content;
+      }
+    }
+
+    &_item {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      color: $white;
+      font-stretch: 136%;
+      text-decoration: none;
+
+      @include breakpoint($sm) {
+        margin: 9px;
+        font-size: 17px;
+        line-height: 23px;
+      }
+
+      @include breakpoint($xs) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &-map {
+        @include prependIcon();
+
+        &::before {
+          content: url("../assets/contacts/map.svg");
+        }
+      }
+
+      &-mail {
+        @include prependIcon();
+
+        &::before {
+          content: url("../assets/contacts/mail.svg");
+        }
+      }
+
+      &-phone {
+        @include prependIcon();
+
+        &::before {
+          content: url("../assets/contacts/phone.svg");
+        }
+      }
+
     }
   }
 
-  &_item {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 26px;
-    color: $white;
-    font-stretch: 136%;
-    text-decoration: none;
+  &_social {
+    height: 32px;
+    text-align: center;
 
-    &-map {
-      @include prependIcon();
-
-      &::before {
-        content: url("../assets/contacts/map.svg");
-      }
+    &_item {
+      margin: 12px;
     }
 
-    &-mail {
-      @include prependIcon();
-
-      &::before {
-        content: url("../assets/contacts/mail.svg");
-      }
+    &_icon {
+      height: 100%;
+      width: auto;
     }
-
-    &-phone {
-      @include prependIcon();
-
-      &::before {
-        content: url("../assets/contacts/phone.svg");
-      }
-    }
-
   }
 }
 
-.social {
-  height: 32px;
-  text-align: center;
-
-  &_item {
-    margin: 12px;
-  }
-
-  &_icon {
-    height: 100%;
-    width: auto;
-  }
-}
