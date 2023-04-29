@@ -12,6 +12,13 @@ header {
   &.page_2 {
     background-color: rgba($darkBlue, .9);
   }
+
+  @include breakpoint($sm) {
+    position: fixed;
+    background-color: $darkBlue;
+    height: 64px;
+    padding: 35px 16px 11px;
+  }
 }
 
 .header_inner {
@@ -24,6 +31,10 @@ header {
   height: inherit;
   flex-grow: .5;
 
+  @include breakpoint($sm) {
+    display: none;
+  }
+
   &_img {
     height: 100%;
   }
@@ -31,6 +42,10 @@ header {
 
 .nav {
   flex-grow: 2;
+
+  @include breakpoint($sm) {
+    display: none;
+  }
 
 
   &_item {
@@ -56,7 +71,9 @@ header {
 .contacts-header {
   flex-grow: .75;
   font-size: 20px;
-
+  @include breakpoint($md) {
+    display: none;
+  }
 
   &_item {
     font-style: normal;
