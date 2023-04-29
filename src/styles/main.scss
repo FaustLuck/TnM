@@ -1,10 +1,18 @@
 main {
   overflow-y: hidden;
+  @include breakpoint($sm) {
+    overflow-y: auto;
+  }
 }
 
 .wrapper {
   display: flex;
   transition: transform 1s linear;
+
+  @include breakpoint($sm) {
+    flex-direction: column;
+    padding-top: 64px;
+  }
 
   & > * {
     display: flex;
@@ -13,6 +21,12 @@ main {
     height: 100vh;
     min-width: 100vw;
     position: relative;
+    overflow: hidden;
+
+    @include breakpoint($sm) {
+      height: auto;
+      overflow: auto;
+    }
   }
 
   &_main {
