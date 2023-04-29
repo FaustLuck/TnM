@@ -26,6 +26,7 @@ main {
     @include breakpoint($sm) {
       height: auto;
       overflow: auto;
+      min-width: auto;
     }
   }
 
@@ -567,11 +568,11 @@ main {
   flex-direction: column;
 
   @include breakpoint($sm) {
-    padding: 40px 20px 120px;
+    padding: 40px 20px 18px;
   }
 
   @include breakpoint($sm) {
-    padding: 40px 10px 120px;
+    padding: 40px 10px 18px;
   }
 
   & > * {
@@ -701,6 +702,7 @@ main {
   &_social {
     height: 32px;
     text-align: center;
+    margin-bottom: 35px;
 
     &_item {
       margin: 12px;
