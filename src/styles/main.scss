@@ -312,17 +312,46 @@ main {
     color: $white;
     font-stretch: 126%;
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
+
+    @include breakpoint($md) {
+      font-size: 120px;
+      line-height: 150px;
+    }
+
+    @include breakpoint($sm) {
+      font-size: 80px;
+      line-height: 94px;
+      margin-left: 0;
+    }
+
+    @include breakpoint($xs) {
+      font-size: 40px;
+      line-height: 49px;
+    }
   }
 
   &_content {
-    width: 1000px;
+    width: 960px;
     margin: 0 auto;
+
+    @include breakpoint($sm) {
+      width: 100%
+    }
   }
 
   &_frame {
     width: 100%;
     background: linear-gradient(90deg, transparent 16%, rgba($azure, .9) 16%, rgba($azure, .9));
     padding: 80px 0;
+
+    @include breakpoint($sm) {
+      padding: 45px 24px;
+      background: rgba($azure, .9);
+    }
+
+    @include breakpoint($xs) {
+      padding: 30px 16px;
+    }
   }
 
   &_plan {
@@ -331,6 +360,10 @@ main {
     position: absolute;
     right: 40px;
     bottom: 55px;
+
+    @include breakpoint($md) {
+      display: none;
+    }
   }
 }
 
@@ -345,6 +378,14 @@ main {
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
 
     @include underline(before, $darkBlue, -8px, 2px, 131px);
+    @include breakpoint($sm) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @include breakpoint($xs) {
+      font-size: 18px;
+      line-height: 21px;
+    }
   }
 
   &_text {
@@ -354,6 +395,15 @@ main {
     margin-bottom: 13px;
     color: $white;
     font-stretch: 136%;
+
+    @include breakpoint($sm) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include breakpoint($xs) {
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 }
 
