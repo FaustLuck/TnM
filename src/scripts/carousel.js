@@ -22,8 +22,10 @@ function getTargetIndex(target) {
 }
 
 export function changeSlide(e) {
-  if (!e.isPrimary) return;
-  if (!e.target.classList.contains("control_item")) return;
+  if (e) {
+    if (!e.isPrimary) return;
+    if (!e.target.classList.contains("control_item")) return;
+  }
 
   function updateSlider() {
     const slider = document.querySelector(".slider_image_wrapper");
@@ -44,7 +46,7 @@ export function changeSlide(e) {
   slider.addEventListener("transitionend", updateSlider);
   wrapper.addEventListener("transitionend", updateTitles);
 
-  const targetIndex = getTargetIndex(e.target);
+  const targetIndex = (e) ? getTargetIndex(e.target) : 1;
 
   slider.style = `transform:translateX(${-targetIndex * 100}%);`;
 
@@ -82,3 +84,4 @@ function setActiveLamp(index) {
   active.classList.remove(activeClass);
   lamps[(index + activeIndex) % length].classList.add(activeClass);
 }
+
