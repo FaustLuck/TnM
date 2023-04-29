@@ -43,6 +43,10 @@ main {
   &_engineering {
     background-image: url("../assets/engineering/background.jpg");
     background-size: cover;
+
+    @include breakpoint($xs) {
+      background-image: url("../assets/engineering/background-xs.jpg");
+    }
   }
 
   &_equipment {
