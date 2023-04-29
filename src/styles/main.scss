@@ -34,6 +34,10 @@ main {
     background-color: $darkBlue;
     background-blend-mode: multiply;
     background-size: cover;
+
+    @include breakpoint($xs){
+      background-image: url('../assets/main/background-xs.jpg');
+    }
   }
 
   &_engineering {
@@ -58,12 +62,27 @@ main {
   width: 1200px;
   margin: 0 auto;
 
+  @include breakpoint($md) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 40px;
+  }
+
+  @include breakpoint($xs) {
+    align-items: flex-start;
+  }
+
   &_centrifuge {
     position: absolute;
     width: 720px;
     height: 550px;
     left: -50px;
-    bottom: -100px
+    bottom: -100px;
+
+    @include breakpoint($md) {
+      display: none;
+    }
   }
 
   &_timax {
@@ -72,15 +91,47 @@ main {
     height: 700px;
     right: 60px;
     top: -120px;
+
+    @include breakpoint($md) {
+      display: none;
+    }
   }
 
   &_img {
     height: 144px;
     width: auto;
+    object-fit: contain;
+
+    @include breakpoint($sm) {
+      height: 100px;
+    }
+
+    @include breakpoint($xs) {
+      max-height: 66px;
+      width: auto;
+      max-width: 100%;
+      padding: 0 16px;
+    }
   }
 
   &_content {
     margin-left: 208px;
+
+    @include breakpoint($md) {
+      width: 960px;
+      margin: 0 auto;
+    }
+
+    @include breakpoint($sm) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+    @include breakpoint($xs) {
+      align-items: flex-start;
+    }
   }
 
   &_title {
@@ -92,17 +143,48 @@ main {
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 59;
 
     @include underline(after, $azure, -14px, 4px, 131px);
+
+    @include breakpoint($xs) {
+      font-size: 24px;
+      line-height: 28px;
+      padding-left: 107px;
+      &::after{
+        left: 107px;
+      }
+    }
+
+    //todo
   }
 
   &_cards {
     display: flex;
     justify-content: space-between;
+
+    @include breakpoint($sm) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @include breakpoint($xs) {
+      order: 1;
+      background-color: $darkBlue;
+      padding: 0 16px 40px;
+    }
   }
 }
 
 .card {
   margin-top: 52px;
+  padding-left: 50px;
   width: 30%;
+
+  @include breakpoint($sm) {
+    width: 50%;
+  }
+
+  @include breakpoint($xs) {
+    padding: 0 0 0 20px;
+    width: 100%;
+  }
 
   &_img {
     height: 72px;
@@ -140,14 +222,25 @@ main {
   width: 66%;
   position: relative;
 
+  @include breakpoint($sm) {
+    float: none;
+  }
+
+  @include breakpoint($xs) {
+    width: auto;
+    padding: 0 16px;
+  }
+
+  @include underline(before, $azure, auto, 2px, 132px);
+
   &::before {
-    position: absolute;
-    content: '';
-    width: 132px;
-    height: 2px;
     top: -10px;
-    background-color: $azure;
-    transform: skewX(-30deg);
+  }
+
+  &::before {
+    @include breakpoint($xs) {
+      display: none;
+    }
   }
 
   &_quote {
@@ -156,6 +249,10 @@ main {
     line-height: 21px;
     color: $azure;
     font-stretch: 136%;
+
+    @include breakpoint($xs) {
+      color: $grey;
+    }
   }
 
   &_author {
@@ -181,6 +278,10 @@ main {
         font-weight: 500;
         font-size: 20px;
         font-stretch: 136%;
+
+        @include breakpoint($xs) {
+          font-size: 16px;
+        }
       }
 
       & > span {
@@ -188,6 +289,10 @@ main {
         font-size: 16px;
         opacity: .75;
         font-stretch: 136%;
+
+        @include breakpoint($xs) {
+          font-size: 14px;
+        }
       }
     }
   }
