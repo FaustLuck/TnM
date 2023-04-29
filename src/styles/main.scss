@@ -35,7 +35,7 @@ main {
     background-blend-mode: multiply;
     background-size: cover;
 
-    @include breakpoint($xs){
+    @include breakpoint($xs) {
       background-image: url('../assets/main/background-xs.jpg');
     }
   }
