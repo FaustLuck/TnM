@@ -1,8 +1,17 @@
-footer {
-
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+
+  &-mobile {
+    & > div {
+      text-align: center;
+    }
+  }
+
+  @include breakpoint($sm) {
+    display: none;
+  }
 }
 
 .copyright {
@@ -13,6 +22,11 @@ footer {
   font-size: 16px;
   font-stretch: 136%;
   @include pages(color, false, $white, $white, $darkBlue, $white);
+
+  &-mobile {
+    color: $white;
+    font-size: 12px;
+  }
 }
 
 .counter {
@@ -25,7 +39,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
 
   &_number {
     display: inline-block;
@@ -66,6 +79,14 @@ footer {
   right: 40px;
   bottom: 45px;
   @include pages(opacity, false, 1, 0, 0, 1);
+
+  &-mobile {
+    margin-bottom: 25px;
+
+    @include breakpoint($xs) {
+      height: 25px;
+    }
+  }
 
   &_img {
     height: 100%;
