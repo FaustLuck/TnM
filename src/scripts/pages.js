@@ -20,8 +20,7 @@ function calculateIndices(number, delta) {
 function changePage(current, next) {
   const elements = document.querySelectorAll(`.page_${current}`);
   elements.forEach(el => {
-    el.classList.remove(`page_${current}`);
-    el.classList.add(`page_${next}`);
+    el.classList.replace(`page_${current}`,`page_${next}`)
   });
 }
 
