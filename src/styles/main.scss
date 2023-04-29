@@ -148,12 +148,10 @@ main {
       font-size: 24px;
       line-height: 28px;
       padding-left: 107px;
-      &::after{
+      &::after {
         left: 107px;
       }
     }
-
-    //todo
   }
 
   &_cards {
