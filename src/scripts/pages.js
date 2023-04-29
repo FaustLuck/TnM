@@ -2,7 +2,6 @@ const wrapper = document.querySelector(".wrapper");
 
 export function changeSlider(e) {
   if (window.matchMedia("screen and (max-width: 960px)").matches) return;
-  e.preventDefault();
   const number = +getNumber(wrapper.style.transform);
   if (number - e.deltaY > 0 || number - e.deltaY < -300) return;
   wrapper.addEventListener("transitionend", pause);
