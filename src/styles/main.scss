@@ -610,7 +610,7 @@ main {
     height: 22px;
     width: 22px;
     cursor: pointer;
-    @include breakpoint($sm){
+    @include breakpoint($xs){
       display: block;
     }
 
