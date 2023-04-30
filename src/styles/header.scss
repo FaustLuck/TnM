@@ -56,17 +56,17 @@ header {
     font-stretch: 151%;
     opacity: .5;
     cursor: pointer;
+    text-decoration: none;
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 78;
     @include pages(color, false, $white, $white, $darkBlue, $white);
 
-    &:hover{
+    &:hover {
       opacity: 1;
     }
 
 
     &-active {
       opacity: 1;
-
       @include underline(after, $azure, -8px, 1px, 72px);
     }
   }

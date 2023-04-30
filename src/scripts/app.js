@@ -1,4 +1,4 @@
-import { changeSlider } from "./pages.js";
+import { changeSlider, clickNavLinkPage } from "./pages.js";
 import { changeSlide, setControl, start, stop } from "./carousel.js";
 
 let observer = new MutationObserver(mutationRecords => {
@@ -15,6 +15,8 @@ let observer = new MutationObserver(mutationRecords => {
 observer.observe(document.querySelector(".page_1"), {attributeFilter: ["class"]});
 
 document.addEventListener("wheel", changeSlider);
+document.addEventListener("pointerdown", clickNavLinkPage);
+
 document.addEventListener("DOMContentLoaded", setControl);
 window.addEventListener("resize", () => {
   if (window.matchMedia("screen and (max-width: 600px)").matches) return;
