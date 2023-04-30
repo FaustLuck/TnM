@@ -1,5 +1,14 @@
 const slider = document.querySelector(".slider_image_wrapper");
 const wrapper = document.querySelector(".control_wrapper");
+let timerId;
+
+export function start() {
+  timerId = setInterval(changeSlide, 2000);
+}
+
+export function stop() {
+  clearInterval(timerId);
+}
 
 export function setControl() {
   if (window.matchMedia("screen and (max-width: 600px)").matches) {
@@ -7,7 +16,6 @@ export function setControl() {
     unshift(wrapper);
     return;
   }
-  ;
   const width = document.documentElement.clientWidth;
   document.querySelector(".control").style.left = width * .6 + "px";
   setOpacity();
@@ -32,6 +40,7 @@ function getTargetIndex(target) {
 }
 
 export function changeSlide(e) {
+  stop();
   const flagMQ = window.matchMedia("screen and (max-width: 600px)").matches;
   if (e) {
     if (!e.isPrimary) return;
@@ -76,6 +85,7 @@ export function changeSlide(e) {
   if (targetIndex <= 0) targetIndex = 0;
   slider.style = `transform:translateX(${-targetIndex * 100}%);`;
   wrapper.style = `transform:translateX(${transform});`;
+  if (!flagMQ) start();
 }
 
 function unshift(container) {
