@@ -19,5 +19,8 @@ observer.observe(document.querySelector(".page_1"), {attributeFilter: ["class"]}
 
 document.addEventListener("wheel", changeSlider);
 document.addEventListener("DOMContentLoaded", setControl);
-window.addEventListener("resize", setControl);
+window.addEventListener("resize", () => {
+  if (window.matchMedia("screen and (max-width: 600px)").matches) return;
+  setControl();
+});
 document.addEventListener("pointerdown", changeSlide);
