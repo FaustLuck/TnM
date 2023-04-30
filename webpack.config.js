@@ -61,9 +61,6 @@ export default {
       {
         test: /\.html$/i,
         loader: "html-loader",
-        options: {
-          minimize: false,
-        },
       }
     ]
   },
@@ -71,7 +68,6 @@ export default {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       scriptLoading: "module",
-      minify: false
     }),
     new MiniCssExtractPlugin({
       filename: "style.[contenthash].css",
