@@ -53,6 +53,9 @@ main {
   &_equipment {
     background: linear-gradient(90deg, $white 60%, $darkBlue 60%, $darkBlue);
     overflow: hidden;
+    @include breakpoint($sm) {
+      background: $white;
+    }
   }
 
   &_contacts {
@@ -422,11 +425,38 @@ main {
 
 .equipment {
   width: 100%;
-  
+
+  @include breakpoint($md) {
+    padding: 29px 0;
+  }
+
   &_frame {
     display: flex;
-    width: 1200px;
-    margin: 0 auto;
+    width: 1280px;
+    margin: 26px auto 0;
+
+    @include breakpoint($md) {
+      width: 95%;
+    }
+    @include breakpoint($sm) {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+    }
+  }
+
+  &_content {
+    padding-left: 45px;
+    @include breakpoint($sm) {
+      padding-left: 0;
+    }
+  }
+
+  &_description {
+    @include breakpoint($sm) {
+      background-color: $grey;
+      padding: 16px;
+    }
   }
 
   &_text {
@@ -437,12 +467,27 @@ main {
     font-stretch: 136%;
     margin-bottom: 10px;
 
+    @include breakpoint($sm) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include breakpoint($xs) {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+
     @include prependIcon();
 
     &:first-of-type {
       &::before {
         content: url("../assets/common/arrow.svg");
         top: 4.5px;
+
+        @include breakpoint($sm) {
+          display: none;
+        }
       }
     }
   }
@@ -454,6 +499,11 @@ main {
     font-stretch: 136%;
     margin-bottom: 30px;
 
+    @include breakpoint($sm) {
+      margin: 25px 16px 14px;
+      font-size: 24px;
+    }
+
     @include prependIcon();
 
     &::before {
@@ -461,6 +511,11 @@ main {
       height: 30px;
       width: 30px;
       left: -40px;
+
+      @include breakpoint($sm) {
+        position: static;
+        margin-right: 16px;
+      }
     }
 
   }
@@ -469,16 +524,21 @@ main {
     background: $azure;
     border-radius: 2px;
     display: inline-block;
-    transform: skewX(20deg) translateX(10px);
+    transform: skewX(15deg) translateX(10px);
     cursor: pointer;
     padding: 8px 30px;
+
+    @include breakpoint($sm) {
+      margin-left: 55px;
+    }
 
     & > a {
       font-weight: 600;
       font-size: 16px;
       text-align: center;
+      text-decoration: none;
       display: block;
-      transform: skewX(-20deg);
+      transform: skewX(-15deg);
       color: $white;
       font-stretch: 143%;
       font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'opsz' 55;
@@ -491,14 +551,30 @@ main {
     height: 1016px;
     right: -300px;
     bottom: -350px;
+
+    @include breakpoint($md) {
+      display: none;
+    }
   }
 }
 
 .slider {
+  @include breakpoint($md) {
+    width: 50%;
+  }
+
+  @include breakpoint($sm) {
+    width: 100%;
+  }
+
   &_image {
     overflow: hidden;
     height: 450px;
     width: 650px;
+
+    @include breakpoint($md) {
+      width: 100%;
+    }
 
     &_wrapper {
       display: flex;
@@ -519,14 +595,43 @@ main {
   position: absolute;
   background-color: $purple;
 
+  @include breakpoint($sm) {
+    position: static;
+  }
+  @include breakpoint($xs){
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 16px;
+  }
+
+  &_arrow{
+    display: none;
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+    @include breakpoint($xs){
+      display: block;
+    }
+
+    &-left{
+      transform: scaleX(-1);
+    }
+  }
+
   &_overflow {
     overflow: hidden;
+
   }
 
   &_wrapper {
     display: flex;
     padding: 20px 0;
     transition: transform 1s linear;
+    @include breakpoint($xs) {
+      padding: 0;
+      width: 100%;
+    }
   }
 
   &_item {
@@ -538,6 +643,14 @@ main {
     color: $white;
     font-stretch: 151%;
     font-variation-settings: 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738;
+
+    @include breakpoint($xs) {
+      font-size: 18px;
+      min-width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+
   }
 }
 
@@ -547,6 +660,10 @@ main {
   left: 26px;
   height: 6px;
   bottom: -16px;
+
+  @include breakpoint($sm) {
+    display: none;
+  }
 
   &_item {
     width: 36px;
