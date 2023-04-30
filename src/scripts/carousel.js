@@ -53,13 +53,13 @@ export function changeSlide(e) {
 
   function updateSlider() {
     const slider = document.querySelector(".slider_image_wrapper");
-    (targetIndex > 0) ? replaceItems(slider, targetIndex) : unshift(slider);
+    (targetIndex > 0) ? replaceItems(slider, targetIndex, flagMQ) : unshift(slider);
     slider.removeEventListener("transitionend", updateSlider);
   }
 
   function updateTitles() {
     const wrapper = document.querySelector(".control_wrapper");
-    (targetIndex > 0) ? replaceItems(wrapper, targetIndex) : unshift(wrapper);
+    (targetIndex > 0) ? replaceItems(wrapper, targetIndex, flagMQ) : unshift(wrapper);
     setOpacity();
     wrapper.removeEventListener("transitionend", updateTitles);
   }
@@ -97,8 +97,8 @@ function unshift(container) {
 }
 
 
-function replaceItems(container, index) {
-  if (window.matchMedia("screen and (max-width: 600px)").matches) index = 1;
+function replaceItems(container, index, mq) {
+  if (mq) index = 1;
   container.classList.add("disable-transition");
   let i = 0;
   while (i < index) {
@@ -106,7 +106,7 @@ function replaceItems(container, index) {
     container.append(item);
     i++;
   }
-  container.style = `transform:translateX(-100%);`;
+  container.style = (!mq) ? `transform:translateX(0%);` : `transform:translateX(-100%);`;
   setTimeout(() => container.classList.remove("disable-transition"));
 }
 
