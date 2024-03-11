@@ -1,45 +1,45 @@
 const wrapper = document.querySelector(".wrapper");
+const nav = document.querySelector(".nav");
 
 export function clickNavLinkPage(e) {
   e.preventDefault();
+  if (!e.target.closest(".nav_item")) return;
   const target = e.target;
-  if (!target.closest(".nav")) return;
-  const nav = document.querySelector(".nav");
-  const targetIndex = Array.from(nav.children).findIndex(el => el === target);
-  const currentIndex = Array.from(nav.children).findIndex(el => el.classList.contains("nav_item-active"));
 
-  wrapper.addEventListener("transitionend", pause);
-  document.removeEventListener("pointerdown", clickNavLinkPage);
+  // document.querySelector(target.getAttribute("href"))
+  //   .scrollIntoView({behavior: "smooth"});
+  scroll(target)
 
-  wrapper.style = `transform:translateX(${(-targetIndex) * 100}%);`;
-
-  changePage(currentIndex + 1, targetIndex + 1);
-  changeActiveElement(currentIndex + 1, targetIndex + 1);
+  const [targetIndex, currentIndex] = getIndices(target);
+  changePage(currentIndex, targetIndex);
+  changeActiveElement(currentIndex, targetIndex);
 }
 
+function getIndices(target) {
+  const targetIndex = Array.from(nav.children).findIndex(el => el === target) + 1;
+  const currentIndex = Array.from(nav.children).findIndex(el => el.classList.contains("nav_item-active")) + 1;
+  return [targetIndex, currentIndex];
+}
+
+function scroll(target) {
+  const {left} = document.querySelector(target.getAttribute("href")).getBoundingClientRect();
+  window.scrollTo({left, behavior: "smooth"});
+}
 
 export function changeSlider(e) {
   if (window.matchMedia("screen and (max-width: 960px)").matches) return;
-  const number = +getNumber(wrapper.style.transform);
-  if (number - e.deltaY > 0 || number - e.deltaY < -300) return;
+  const currentIndex = getIndices(e.target)[1];
+  const targetIndex = currentIndex + Math.round(e.deltaY / 100);
+  if (targetIndex > 4 || targetIndex < 1) return;
 
-  wrapper.addEventListener("transitionend", pause);
-  document.removeEventListener("wheel", changeSlider);
+  document.querySelector(nav.children[targetIndex - 1].getAttribute("href"))
+    .scrollIntoView({behavior: "smooth"});
+  changePage(currentIndex, targetIndex);
+  changeActiveElement(currentIndex, targetIndex);
 
-  wrapper.style = `transform:translateX(${number - e.deltaY}%);`;
-  const [current, next] = calculateIndices(number, e.deltaY);
-  changePage(current, next);
-  changeActiveElement(current, next);
-}
-
-function calculateIndices(number, delta) {
-  const current = 1 + number / (-100);
-  const next = current + delta / 100;
-  return [current, next];
 }
 
 function changePage(current, next) {
-  console.log(current, next);
   const elements = document.querySelectorAll(`.page_${current}`);
   elements.forEach(el => {
     el.classList.replace(`page_${current}`, `page_${next}`);
@@ -56,15 +56,4 @@ function changeActiveElement(current, next) {
     node[current - 1].classList.remove(activeClass);
     node[next - 1].classList.add(activeClass);
   });
-}
-
-function pause() {
-  document.addEventListener("wheel", changeSlider);
-  document.addEventListener("pointerdown", clickNavLinkPage);
-  wrapper.removeEventListener("transitionend", pause);
-}
-
-function getNumber(string) {
-  const array = string.match(/-?\d+/g) ?? [];
-  return array[0] ?? 0;
 }

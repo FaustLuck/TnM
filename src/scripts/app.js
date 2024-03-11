@@ -23,3 +23,4 @@ window.addEventListener("resize", () => {
   setControl();
 });
 document.addEventListener("pointerdown", changeSlide);
+document.querySelector('.nav').addEventListener('click',clickNavLinkPage)

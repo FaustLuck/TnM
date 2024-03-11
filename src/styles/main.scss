@@ -1,13 +1,5 @@
 main {
-  overflow-y: hidden;
-  @include breakpoint($sm) {
-    overflow-y: auto;
-  }
-}
-
-.wrapper {
   display: flex;
-  transition: transform 1s linear;
 
   @include breakpoint($sm) {
     flex-direction: column;
@@ -29,7 +21,9 @@ main {
       min-width: auto;
     }
   }
+}
 
+.wrapper {
   &_main {
     background-image: url("../assets/main/background.jpg");
     background-color: $darkBlue;
@@ -64,7 +58,9 @@ main {
     background-blend-mode: multiply;
     background-size: cover;
   }
+
 }
+
 
 .page_title {
   font-weight: 600;
@@ -598,23 +594,23 @@ main {
   @include breakpoint($sm) {
     position: static;
   }
-  @include breakpoint($xs){
+  @include breakpoint($xs) {
     display: flex;
     align-items: center;
     height: 44px;
     padding: 0 16px;
   }
 
-  &_arrow{
+  &_arrow {
     display: none;
     height: 22px;
     width: 22px;
     cursor: pointer;
-    @include breakpoint($xs){
+    @include breakpoint($xs) {
       display: block;
     }
 
-    &-left{
+    &-left {
       transform: scaleX(-1);
     }
   }
